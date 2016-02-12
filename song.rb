@@ -8,56 +8,56 @@ class Song
   def verse(i)
     case i
     when 1
-      "I know an old lady who swallowed a fly.\n" +
-      "I don't know why she swallowed the fly. Perhaps she'll die.\n"
+      "I know an old lady who swallowed a %s.\n" % "fly" +
+      "%s\n"                                     % "I don't know why she swallowed the fly. Perhaps she'll die."
     when 2
-      "I know an old lady who swallowed a spider.\n" +
-      "It wriggled and jiggled and tickled inside her.\n" +
-      "She swallowed the spider to catch the fly.\n" +
-      "I don't know why she swallowed the fly. Perhaps she'll die.\n"
+      "I know an old lady who swallowed a %s.\n" % "spider" +
+      "%s\n"                                     % "It wriggled and jiggled and tickled inside her." +
+      "She swallowed the %s to catch the %s.\n"  % ["spider", "fly"] +
+      "%s\n"                                     % "I don't know why she swallowed the fly. Perhaps she'll die."
     when 3
-      "I know an old lady who swallowed a bird.\n" +
-      "How absurd to swallow a bird!\n" +
-      "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n" +
-      "She swallowed the spider to catch the fly.\n" +
-      "I don't know why she swallowed the fly. Perhaps she'll die.\n"
+      "I know an old lady who swallowed a %s.\n" % "bird" +
+      "%s\n"                                     % "How absurd to swallow a bird!" +
+      "She swallowed the %s to catch the %s.\n"  % ["bird", "spider that wriggled and jiggled and tickled inside her"] +
+      "She swallowed the %s to catch the %s.\n"  % ["spider", "fly"] +
+      "%s\n"                                     % "I don't know why she swallowed the fly. Perhaps she'll die."
     when 4
-      "I know an old lady who swallowed a cat.\n" +
-      "Imagine that, to swallow a cat!\n" +
-      "She swallowed the cat to catch the bird.\n" +
-      "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n" +
-      "She swallowed the spider to catch the fly.\n" +
-      "I don't know why she swallowed the fly. Perhaps she'll die.\n"
+      "I know an old lady who swallowed a %s.\n" % "cat"+
+      "%s\n"                                     % "Imagine that, to swallow a cat!" +
+      "She swallowed the %s to catch the %s.\n"  % ["cat", "bird"] +
+      "She swallowed the %s to catch the %s.\n"  % ["bird", "spider that wriggled and jiggled and tickled inside her"] +
+      "She swallowed the %s to catch the %s.\n"  % ["spider", "fly"] +
+      "%s\n"                                     % "I don't know why she swallowed the fly. Perhaps she'll die."
     when 5
-      "I know an old lady who swallowed a dog.\n" +
-      "What a hog, to swallow a dog!\n" +
-      "She swallowed the dog to catch the cat.\n" +
-      "She swallowed the cat to catch the bird.\n" +
-      "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n" +
-      "She swallowed the spider to catch the fly.\n" +
-      "I don't know why she swallowed the fly. Perhaps she'll die.\n"
+      "I know an old lady who swallowed a %s.\n" % "dog" +
+      "%s\n"                                     % "What a hog, to swallow a dog!" +
+      "She swallowed the %s to catch the %s.\n"  % ["dog", "cat"] +
+      "She swallowed the %s to catch the %s.\n"  % ["cat", "bird"] +
+      "She swallowed the %s to catch the %s.\n"  % ["bird", "spider that wriggled and jiggled and tickled inside her"] +
+      "She swallowed the %s to catch the %s.\n"  % ["spider", "fly"] +
+      "%s\n"                                     % "I don't know why she swallowed the fly. Perhaps she'll die."
     when 6
-      "I know an old lady who swallowed a goat.\n" +
-      "Just opened her throat and swallowed a goat!\n" +
-      "She swallowed the goat to catch the dog.\n" +
-      "She swallowed the dog to catch the cat.\n" +
-      "She swallowed the cat to catch the bird.\n" +
-      "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n" +
-      "She swallowed the spider to catch the fly.\n" +
-      "I don't know why she swallowed the fly. Perhaps she'll die.\n"
+      "I know an old lady who swallowed a %s.\n" % "goat" +
+      "%s\n"                                     % "Just opened her throat and swallowed a goat!" +
+      "She swallowed the %s to catch the %s.\n"  % ["goat", "dog"] +
+      "She swallowed the %s to catch the %s.\n"  % ["dog", "cat"] +
+      "She swallowed the %s to catch the %s.\n"  % ["cat", "bird"] +
+      "She swallowed the %s to catch the %s.\n"  % ["bird", "spider that wriggled and jiggled and tickled inside her"] +
+      "She swallowed the %s to catch the %s.\n"  % ["spider", "fly"] +
+      "%s\n"                                     % "I don't know why she swallowed the fly. Perhaps she'll die."
     when 7
-      "I know an old lady who swallowed a cow.\n" +
-      "I don't know how she swallowed a cow!\n" +
-      "She swallowed the cow to catch the goat.\n" +
-      "She swallowed the goat to catch the dog.\n" +
-      "She swallowed the dog to catch the cat.\n" +
-      "She swallowed the cat to catch the bird.\n" +
-      "She swallowed the bird to catch the spider that wriggled and jiggled and tickled inside her.\n" +
-      "She swallowed the spider to catch the fly.\n" +
-      "I don't know why she swallowed the fly. Perhaps she'll die.\n"
+      "I know an old lady who swallowed a %s.\n" % "cow" +
+      "%s\n"                                     % "I don't know how she swallowed a cow!" +
+      "She swallowed the %s to catch the %s.\n"  % ["cow", "goat"] +
+      "She swallowed the %s to catch the %s.\n"  % ["goat", "dog"] +
+      "She swallowed the %s to catch the %s.\n"  % ["dog", "cat"] +
+      "She swallowed the %s to catch the %s.\n"  % ["cat", "bird"] +
+      "She swallowed the %s to catch the %s.\n"  % ["bird", "spider that wriggled and jiggled and tickled inside her"] +
+      "She swallowed the %s to catch the %s.\n"  % ["spider", "fly"] +
+      "%s\n"                                     % "I don't know why she swallowed the fly. Perhaps she'll die."
     when 8
-      "I know an old lady who swallowed a horse.\n" +
-      "She's dead, of course!\n"
+      "I know an old lady who swallowed a %s.\n" % "horse" +
+      "%s\n"                                     % "She's dead, of course!"
     end
   end
 end
