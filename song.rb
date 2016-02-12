@@ -60,4 +60,19 @@ class Song
       "%s\n"                                     % "She's dead, of course!"
     end
   end
+
+  def chain
+    [
+      "cow", "goat", "dog", "cat", "bird", "spider", "fly"
+    ].each_cons(2).map {|pair|
+      motivation(*pair)
+    }.join("\n")
+  end
+
+  def motivation(predator, prey)
+    "She swallowed the %s to catch the %s." % [
+      predator,
+      prey,
+    ]
+  end
 end

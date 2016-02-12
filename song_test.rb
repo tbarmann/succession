@@ -60,4 +60,9 @@ She's dead, of course!
     SONG
     assert_equal expected, Song.new.lyrics
   end
+
+  def test_chain
+    skip "I totally just putsed the hell out of this"
+    puts Song.new.send(:chain)
+  end
 end
