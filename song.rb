@@ -1,4 +1,26 @@
+class Critter < Struct.new(:name, :qualifier)
+  def epiteth
+    [name, qualifier].compact.join(" ")
+  end
+end
+
 class Song
+  DATA = [
+    ["horse"],
+    ["cow"],
+    ["goat"],
+    ["dog"],
+    ["cat"],
+    ["bird"],
+    ["spider", "that wriggled and jiggled and tickled inside her"],
+    ["fly"],
+  ]
+
+  attr_reader :critters
+  def initialize
+    @critters = DATA.map {|row| Critter.new(*row)}
+  end
+
   def lyrics
     (1..8).map {|i| verse(i)}.join("\n")
   end
@@ -61,18 +83,16 @@ class Song
     end
   end
 
-  def chain
-    [
-      "cow", "goat", "dog", "cat", "bird", "spider", "fly"
-    ].each_cons(2).map {|pair|
+  def chain(i)
+    critters.last(i).each_cons(2).map {|pair|
       motivation(*pair)
     }.join("\n")
   end
 
   def motivation(predator, prey)
     "She swallowed the %s to catch the %s." % [
-      predator,
-      prey,
+      predator.name,
+      prey.epiteth,
     ]
   end
 end
