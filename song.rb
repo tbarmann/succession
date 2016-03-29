@@ -26,10 +26,15 @@ class Song
   end
 
   def lyrics
-    (1..8).map {|i| verse(i)}.join("\n")
+    (1..8).map {|i| Verse.new(critters).verse(i)}.join("\n")
   end
+end
 
-  private
+class Verse
+  attr_reader :critters
+  def initialize(critters)
+    @critters = critters
+  end
 
   def verse(i)
     case i
@@ -43,6 +48,8 @@ class Song
       "%s\n" % "I don't know why she swallowed the fly. Perhaps she'll die."
     end
   end
+
+  private
 
   def chain(i)
     critters.last(i).each_cons(2).map {|pair|
