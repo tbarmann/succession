@@ -26,17 +26,18 @@ class Song
   end
 
   def lyrics
-    (1..8).map {|i| Verse.new(critters.last(i)).verse(i)}.join("\n")
+    (1..8).map {|i| Verse.new(critters.last(i)).verse}.join("\n")
   end
 end
 
 class Verse
-  attr_reader :critters
+  attr_reader :critters, :i
   def initialize(critters)
     @critters = critters
+    @i = critters.length
   end
 
-  def verse(i)
+  def verse
     case i
     when 1, 8
       "I know an old lady who swallowed a %s.\n" % critters.last(i).first.name +
@@ -44,14 +45,14 @@ class Verse
     else
       "I know an old lady who swallowed a %s.\n" % critters.last(i).first.name +
       "%s\n" % critters.last(i).first.aside +
-      "%s\n" % chain(i) +
+      "%s\n" % chain +
       "%s\n" % "I don't know why she swallowed the fly. Perhaps she'll die."
     end
   end
 
   private
 
-  def chain(i)
+  def chain
     critters.last(i).each_cons(2).map {|pair|
       motivation(*pair)
     }.join("\n")
