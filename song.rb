@@ -27,12 +27,23 @@ class Song
 
   def lyrics
     (1..critters.length).map {|i|
-      Verse.new(critters.last(i))
+      Verse.for(critters, i)
     }.join("\n")
   end
 end
 
 class Verse
+  def self.for(critters, i)
+    case i
+    when 1, critters.length
+      ShortVerse
+    else
+      LongVerse
+    end.new(critters.last(i))
+  end
+end
+
+class ShortVerse
   attr_reader :critters, :critter
   def initialize(critters)
     @critters = critters
@@ -53,13 +64,16 @@ class Verse
   end
 
   def recap
-    case critters.length
-    when 1, 8
-      ""
-    else
-      "%s\n" % chain +
-      "%s\n" % critters.last.aside
-    end
+    ""
+  end
+end
+
+class LongVerse < ShortVerse
+  private
+
+  def recap
+    "%s\n" % chain +
+    "%s\n" % critters.last.aside
   end
 
   def chain
