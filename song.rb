@@ -39,19 +39,27 @@ class Verse
   end
 
   def to_s
+    incident + recap
+  end
+
+  private
+
+  def incident
+    "I know an old lady who swallowed a %s.\n%s\n" % [
+      critters.first.name,
+      critters.first.aside,
+    ]
+  end
+
+  def recap
     case critters.length
     when 1, 8
-      "I know an old lady who swallowed a %s.\n" % critters.first.name +
-      "%s\n" % critters.first.aside
+      ""
     else
-      "I know an old lady who swallowed a %s.\n" % critters.first.name +
-      "%s\n" % critters.first.aside +
       "%s\n" % chain +
       "%s\n" % "I don't know why she swallowed the fly. Perhaps she'll die."
     end
   end
-
-  private
 
   def chain
     critters.each_cons(2).map {|pair|
