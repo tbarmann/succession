@@ -33,9 +33,10 @@ class Song
 end
 
 class Verse
-  attr_reader :critters
+  attr_reader :critters, :critter
   def initialize(critters)
     @critters = critters
+    @critter = critters.first
   end
 
   def to_s
@@ -46,8 +47,8 @@ class Verse
 
   def incident
     "I know an old lady who swallowed a %s.\n%s\n" % [
-      critters.first.name,
-      critters.first.aside,
+      critter.name,
+      critter.aside,
     ]
   end
 
