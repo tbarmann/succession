@@ -26,7 +26,7 @@ class Song
   end
 
   def lyrics
-    (1..8).map {|i| Verse.new(critters).verse(i)}.join("\n")
+    (1..8).map {|i| Verse.new(critters.last(i)).verse(i)}.join("\n")
   end
 end
 
