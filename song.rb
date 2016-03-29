@@ -58,7 +58,7 @@ class Verse
       ""
     else
       "%s\n" % chain +
-      "%s\n" % "I don't know why she swallowed the fly. Perhaps she'll die."
+      "%s\n" % critters.last.aside
     end
   end
 
