@@ -42,11 +42,11 @@ class Verse
   def to_s
     case i
     when 1, 8
-      "I know an old lady who swallowed a %s.\n" % critters.last(i).first.name +
-      "%s\n" % critters.last(i).first.aside
+      "I know an old lady who swallowed a %s.\n" % critters.first.name +
+      "%s\n" % critters.first.aside
     else
-      "I know an old lady who swallowed a %s.\n" % critters.last(i).first.name +
-      "%s\n" % critters.last(i).first.aside +
+      "I know an old lady who swallowed a %s.\n" % critters.first.name +
+      "%s\n" % critters.first.aside +
       "%s\n" % chain +
       "%s\n" % "I don't know why she swallowed the fly. Perhaps she'll die."
     end
@@ -55,7 +55,7 @@ class Verse
   private
 
   def chain
-    critters.last(i).each_cons(2).map {|pair|
+    critters.each_cons(2).map {|pair|
       motivation(*pair)
     }.join("\n")
   end
