@@ -2,6 +2,14 @@ class Critter < Struct.new(:name, :qualifier, :aside)
   def epiteth
     [name, qualifier].compact.join(" ")
   end
+
+  def article
+    if name[0] =~ /[aeiouAEIOU]/
+      "an"
+    else
+      "a"
+    end
+  end
 end
 
 class Song
@@ -57,7 +65,8 @@ class ShortVerse
   private
 
   def incident
-    "I know an old lady who swallowed a %s.\n%s\n" % [
+    "I know an old lady who swallowed %s %s.\n%s\n" % [
+      critter.article,
       critter.name,
       critter.aside,
     ]
