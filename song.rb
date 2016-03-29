@@ -33,14 +33,13 @@ class Song
 end
 
 class Verse
-  attr_reader :critters, :i
+  attr_reader :critters
   def initialize(critters)
     @critters = critters
-    @i = critters.length
   end
 
   def to_s
-    case i
+    case critters.length
     when 1, 8
       "I know an old lady who swallowed a %s.\n" % critters.first.name +
       "%s\n" % critters.first.aside
