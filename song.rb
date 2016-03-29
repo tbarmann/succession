@@ -26,7 +26,9 @@ class Song
   end
 
   def lyrics
-    (1..8).map {|i| Verse.new(critters.last(i)).verse}.join("\n")
+    (1..8).map {|i|
+      Verse.new(critters.last(i))
+    }.join("\n")
   end
 end
 
@@ -37,7 +39,7 @@ class Verse
     @i = critters.length
   end
 
-  def verse
+  def to_s
     case i
     when 1, 8
       "I know an old lady who swallowed a %s.\n" % critters.last(i).first.name +
